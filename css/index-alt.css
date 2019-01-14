@@ -84,11 +84,11 @@ time,
 mark,
 audio,
 video {
+  margin: 0;
+  padding: 0;
   border: 0;
   font-size: 100%;
   font: inherit;
-  margin: 0;
-  padding: 0;
   vertical-align: baseline;
 }
 
@@ -143,17 +143,16 @@ table {
 
 html,
 body {
+  height: 100%;
+  font-size: 16px;
+  font-family: var(--main-font);
+  --main-font: 'Titillium Web', sans-serif;
+  --top-nav-height: 5rem;
+  --main-width: 876px;
+  --main-color: black;
   --gray: rgba(0, 0, 0, 0.5);
   --lightgray: rgba(127, 127, 127, 0.05);
-  --main-color: black;
-  --main-font: 'Titillium Web', sans-serif;
-  --main-width: 876px;
-  --top-nav-height: 5rem;
   color: var(--main-color);
-  font-family: var(--main-font);
-  font-size: 16px;
-  height: 100%;
-  /* background: greenyel; */
 }
 
 h1,
@@ -175,27 +174,46 @@ h5 {
 /*******/
 
 .container {
-  align-items: center;
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-items: center;
+}
+
+main {
+  width: 90vw;
+  max-width: var(--main-width);
+}
+
+figure {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin: 0;
+  max-width: 100%;
+  max-height: 25vh;
+  overflow: hidden;
+}
+
+figure img {
+  object-fit: cover;
 }
 
 .top-nav-container {
-  align-items: center;
-  background: #fffffff6;
   display: flex;
-  height: var(--top-nav-height);
+  width: 100%;
   justify-content: center;
+  align-items: center;
   position: fixed;
   top: 0;
-  width: 100%;
+  height: var(--top-nav-height);
+  background: #fffffff6;
 }
 
 .top-nav {
+  justify-content: space-between;
   align-items: center;
   display: flex;
-  justify-content: space-between;
   width: var(--main-width);
 }
 
@@ -206,14 +224,31 @@ h5 {
 }
 
 .top-nav nav a {
-  color: var(--gray);
   padding: 0.5rem;
   text-decoration: none;
+  color: var(--gray);
 }
 
 .top-nav nav a:hover {
   color: var(--main-color);
   text-shadow: white 0 0 2px;
+}
+
+.top-nav-mobile {
+  display: none;
+}
+
+@media only screen and (max-device-width: 378px) {
+  .top-nav {
+    display: none;
+  }
+  .top-nav-mobile {
+    margin-right: 2rem;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+  }
 }
 
 /**********/
@@ -224,14 +259,14 @@ h5 {
 
 main {
   padding-top: var(--top-nav-height);
-  width: var(--main-width);
+  /* width: var(--main-width); */
 }
 
 header {
-  align-items: center;
   display: flex;
   flex-direction: row;
   justify-content: center;
+  align-items: center;
   margin-bottom: 3rem;
 }
 
@@ -242,125 +277,30 @@ header.secondary {
 
 h1 {
   font-size: 4.8rem;
-  /* color: red; */
 }
 
 .header-inner {
-  display: inline-block;
   flex-grow: 2;
+  display: inline-block;
   text-align: center;
 }
 
 header button {
-  background: none;
-  border: 1px solid var(--main-color);
   font-family: var(--main-font);
   font-size: 1.2rem;
   width: 11rem;
+  border: 1px solid var(--main-color);
+  background: none;
 }
 
 .summary {
-  border-bottom: 1px solid var(--main-color);
+  padding: 1.5rem 0 2rem;
   display: flex;
   flex-direction: column;
-  padding: 1.5rem 0 2rem;
+  border-bottom: 1px solid var(--main-color);
+  margin-bottom: 2rem;
 }
 
 .secondary h1 {
   font-size: 2rem;
-}
-
-/***********/
-
-/* CONTENT */
-
-/***********/
-
-section {
-  display: flex;
-  padding: 3rem 0;
-}
-
-section div {
-  margin: 0.5rem;
-}
-
-section div p {
-  line-height: 1.2;
-}
-
-.top-content {
-  border-top: 1px solid var(--main-color);
-}
-
-.bottom-content {
-  border-bottom: 1px solid var(--main-color);
-}
-
-.contact {
-  display: block;
-  margin-top: 1rem;
-}
-
-.cards {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  margin: 1rem 0;
-}
-
-.cards section {
-  background: var(--lightgray);
-  display: block;
-  margin: 1rem 0;
-  outline: 1px solid var(--main-color);
-  padding: 1rem;
-  width: calc((100% / 2) - 1rem);
-}
-
-.cards button {
-  background: white;
-  border-radius: 6px;
-  border: 1px solid var(--gray);
-  margin-top: 1rem;
-  padding: 0.5rem 2rem;
-}
-
-.cards button:hover {
-  background: var(--main-color);
-  color: white;
-  transition: 200ms;
-}
-
-.facts {
-  border-top: 3px solid var(--main-color);
-  display: flex;
-  justify-content: space-between;
-  padding-top: 2rem;
-}
-
-.facts section {
-  flex-direction: column;
-  padding-top: 0;
-  width: calc((100% / 2) - 1rem);
-}
-
-ul {
-  list-style: disc;
-  margin: 1rem;
-}
-
-ul li {
-  padding: 0.5rem 0;
-}
-
-/**********/
-
-/* FOOTER */
-
-/**********/
-
-footer p {
-  margin: 2rem;
-  text-align: center;
 }
