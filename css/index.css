@@ -152,7 +152,7 @@ img {
 
 @media (max-width: 800px) {
   .top-nav .logo {
-    padding: 2rem 0;
+    margin: 2rem 0;
   }
 }
 
