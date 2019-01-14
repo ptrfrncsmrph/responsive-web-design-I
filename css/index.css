@@ -110,6 +110,13 @@ img {
   width: var(--main-width);
 }
 
+@media (max-width: 800px) {
+  .top-nav {
+    align-self: flex-start;
+    flex-direction: column-reverse;
+  }
+}
+
 .top-nav nav {
   display: flex;
   justify-content: space-around;
@@ -117,14 +124,13 @@ img {
 }
 
 @media (max-width: 800px) {
-  .top-nav {
-    align-self: flex-start;
-    flex-direction: column-reverse;
-  }
   .top-nav nav {
     width: 100%;
     justify-content: space-between;
   }
+}
+
+@media (max-width: 800px) {
   .top-nav .logo {
     padding: 2rem 0;
   }
@@ -166,7 +172,7 @@ header.secondary {
 }
 
 h1 {
-  font-size: 4.8rem;
+  font-size: 4.5rem;
 }
 
 .header-inner {
@@ -187,6 +193,7 @@ header button {
   font-family: var(--main-font);
   font-size: 1.2rem;
   width: 11rem;
+  margin-top: 1rem;
 }
 
 .summary {
