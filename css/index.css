@@ -200,6 +200,7 @@ main {
 @media (max-width: 500px) {
   main {
     padding-top: 3rem;
+    max-width: 95%;
   }
 }
 
@@ -272,8 +273,21 @@ section {
   padding: 3rem 0;
 }
 
+@media (max-width: 500px) {
+  section {
+    flex-direction: column;
+    padding: 1rem 0;
+  }
+}
+
 section div {
   margin: 0.5rem;
+}
+
+@media (max-width: 500px) {
+  section div {
+    margin: 1rem 0;
+  }
 }
 
 section div p {
