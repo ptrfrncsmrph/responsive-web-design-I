@@ -1,0 +1,399 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  margin: 0;
+  padding: 0;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after, q:before, q:after {
+  content: '';
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* Set every element's box-sizing to border-box */
+
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  --gray: rgba(0, 0, 0, 0.5);
+  --lightgray: rgba(127, 127, 127, 0.05);
+  --main-color: black;
+  --main-font: 'Titillium Web', sans-serif;
+  --main-width: 876px;
+  --top-nav-height: 5rem;
+  /* Media queries */
+  color: var(--main-color);
+  font-family: var(--main-font);
+  font-size: 16px;
+  height: 100%;
+}
+
+@media(max-width: 800px) {
+  html, body {
+    --main-width: 95vw;
+    --top-nav-height: 12rem;
+  }
+}
+
+@media(max-width: 500px) {
+  html, body {
+    --main-width: 100vw;
+  }
+}
+
+h1, h2, h3, h4, h5 {
+  font-family: 'Bangers', cursive;
+  letter-spacing: 1px;
+  margin-bottom: 15px;
+}
+
+/* Your code starts here! */
+
+/*******/
+
+/* NAV */
+
+/*******/
+
+img {
+  max-width: 100%;
+}
+
+.container {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.top-nav-container {
+  align-items: center;
+  background: #fffffffa;
+  display: flex;
+  height: var(--top-nav-height);
+  justify-content: center;
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+@media (max-width: 500px) {
+  .top-nav-container {
+    position: relative;
+    height: auto;
+  }
+}
+
+.top-nav {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  width: var(--main-width);
+}
+
+@media (max-width: 800px) {
+  .top-nav {
+    align-self: flex-start;
+    flex-direction: column-reverse;
+  }
+}
+
+.top-nav nav {
+  display: flex;
+  justify-content: space-around;
+  width: calc(100% - 14rem);
+}
+
+@media (max-width: 800px) {
+  .top-nav nav {
+    width: 100%;
+    justify-content: space-between;
+  }
+}
+
+@media (max-width: 500px) {
+  .top-nav nav {
+    flex-direction: column;
+    font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 800px) {
+  .top-nav .logo {
+    margin: 2rem 0;
+  }
+}
+
+@media (max-width: 500px) {
+  .top-nav .logo {
+    padding: 1rem 0 1.5rem;
+  }
+}
+
+.top-nav nav a {
+  color: var(--gray);
+  padding: 0.5rem;
+  text-decoration: none;
+}
+
+.top-nav nav a:hover {
+  color: var(--main-color);
+  text-shadow: white 0 0 2px;
+}
+
+@media (max-width: 500px) {
+  .top-nav nav a {
+    text-align: center;
+    padding: 1.26rem 0;
+    border-top: 1px solid var(--gray);
+    border-bottom: 1px solid var(--gray);
+  }
+  .top-nav nav a+a {
+    border-top: none;
+  }
+}
+
+/**********/
+
+/* HEADER */
+
+/**********/
+
+main {
+  padding-top: var(--top-nav-height);
+  width: var(--main-width);
+}
+
+@media (max-width: 500px) {
+  main {
+    padding-top: 3rem;
+    max-width: 95%;
+  }
+}
+
+header {
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-bottom: 3rem;
+}
+
+header.secondary {
+  flex-direction: column;
+  margin-bottom: 0;
+}
+
+h1 {
+  font-size: 4.5rem;
+}
+
+button {
+  background: white;
+  margin-top: 1rem;
+}
+
+button:hover {
+  background: var(--main-color);
+  color: white;
+  transition: 200ms;
+}
+
+.header-inner {
+  display: inline-block;
+  flex-grow: 2;
+  text-align: center;
+}
+
+@media(max-width: 800px) {
+  header img {
+    display: none;
+  }
+}
+
+@media(max-width: 800px) {
+  header.secondary img {
+    display: inherit;
+    height: 200px;
+    width: 100%;
+    object-fit: cover;
+  }
+}
+
+header button {
+  border: 1px solid var(--main-color);
+  font-family: var(--main-font);
+  font-size: 1.2rem;
+  padding: 0 2.5rem;
+}
+
+.summary {
+  border-bottom: 1px solid var(--main-color);
+  display: flex;
+  flex-direction: column;
+  padding: 1.5rem 0 2rem;
+}
+
+.secondary h1 {
+  font-size: 2rem;
+}
+
+/***********/
+
+/* CONTENT */
+
+/***********/
+
+section {
+  display: flex;
+  padding: 3rem 0;
+}
+
+@media (max-width: 500px) {
+  section {
+    flex-direction: column;
+    padding: 1rem 0;
+  }
+}
+
+section div {
+  margin: 0.5rem;
+}
+
+@media (max-width: 500px) {
+  section div {
+    margin: 1rem 0;
+  }
+}
+
+section div p {
+  line-height: 1.2;
+}
+
+img.middle-img {
+  height: 182px;
+  object-fit: cover;
+}
+
+.top-content {
+  border-top: 1px solid var(--main-color);
+}
+
+.bottom-content {
+  border-bottom: 1px solid var(--main-color);
+}
+
+.contact {
+  display: block;
+  margin-top: 1rem;
+}
+
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: 1rem 0;
+}
+
+.cards section {
+  background: var(--lightgray);
+  display: block;
+  margin: 1rem 0;
+  outline: 1px solid var(--main-color);
+  padding: 1rem;
+  width: calc((100% / 2) - 1rem);
+}
+
+@media (max-width: 500px) {
+  .cards section {
+    width: 100%;
+  }
+}
+
+.cards button {
+  border-radius: 6px;
+  border: 1px solid var(--gray);
+  padding: 0.5rem 2rem;
+}
+
+.facts {
+  border-top: 3px solid var(--main-color);
+  display: flex;
+  justify-content: space-between;
+  padding-top: 2rem;
+}
+
+.facts section {
+  flex-direction: column;
+  padding-top: 0;
+  padding-right: 1rem;
+}
+
+@media (max-width: 500px) {
+  .facts section {
+    padding-right: 0;
+  }
+}
+
+.facts img {
+  max-width: 50%;
+  object-fit: cover;
+}
+
+@media (max-width: 500px) {
+  .facts img {
+    display: none;
+  }
+}
+
+ul {
+  list-style: disc;
+  margin: 1rem;
+}
+
+ul li {
+  padding: 0.5rem 0;
+}
+
+/**********/
+
+/* FOOTER */
+
+/**********/
+
+footer p {
+  margin: 2rem;
+  text-align: center;
+}
