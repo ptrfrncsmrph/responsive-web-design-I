@@ -3,87 +3,7 @@
    License: none (public domain)
 */
 
-html,
-body,
-div,
-span,
-applet,
-object,
-iframe,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-p,
-blockquote,
-pre,
-a,
-abbr,
-acronym,
-address,
-big,
-cite,
-code,
-del,
-dfn,
-em,
-img,
-ins,
-kbd,
-q,
-s,
-samp,
-small,
-strike,
-strong,
-sub,
-sup,
-tt,
-var,
-b,
-u,
-i,
-center,
-dl,
-dt,
-dd,
-ol,
-ul,
-li,
-fieldset,
-form,
-label,
-legend,
-table,
-caption,
-tbody,
-tfoot,
-thead,
-tr,
-th,
-td,
-article,
-aside,
-canvas,
-details,
-embed,
-figure,
-figcaption,
-footer,
-header,
-hgroup,
-menu,
-nav,
-output,
-ruby,
-section,
-summary,
-time,
-mark,
-audio,
-video {
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
   border: 0;
   font-size: 100%;
   font: inherit;
@@ -94,17 +14,7 @@ video {
 
 /* HTML5 display-role reset for older browsers */
 
-article,
-aside,
-details,
-figcaption,
-figure,
-footer,
-header,
-hgroup,
-menu,
-nav,
-section {
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
   display: block;
 }
 
@@ -112,20 +22,15 @@ body {
   line-height: 1;
 }
 
-ol,
-ul {
+ol, ul {
   list-style: none;
 }
 
-blockquote,
-q {
+blockquote, q {
   quotes: none;
 }
 
-blockquote:before,
-blockquote:after,
-q:before,
-q:after {
+blockquote:before, blockquote:after, q:before, q:after {
   content: '';
   content: none;
 }
@@ -141,26 +46,28 @@ table {
   box-sizing: border-box;
 }
 
-html,
-body {
+html, body {
   --gray: rgba(0, 0, 0, 0.5);
   --lightgray: rgba(127, 127, 127, 0.05);
   --main-color: black;
   --main-font: 'Titillium Web', sans-serif;
   --main-width: 876px;
   --top-nav-height: 5rem;
+  /* Media queries */
   color: var(--main-color);
   font-family: var(--main-font);
   font-size: 16px;
   height: 100%;
-  /* background: greenyel; */
 }
 
-h1,
-h2,
-h3,
-h4,
-h5 {
+@media(max-width: 800px) {
+  html, body {
+    --main-width: 95vw;
+    --top-nav-height: 12rem;
+  }
+}
+
+h1, h2, h3, h4, h5 {
   font-family: 'Bangers', cursive;
   letter-spacing: 1px;
   margin-bottom: 15px;
@@ -173,6 +80,10 @@ h5 {
 /* NAV */
 
 /*******/
+
+img {
+  max-width: 100%;
+}
 
 .container {
   align-items: center;
@@ -203,6 +114,20 @@ h5 {
   display: flex;
   justify-content: space-around;
   width: calc(100% - 14rem);
+}
+
+@media (max-width: 800px) {
+  .top-nav {
+    align-self: flex-start;
+    flex-direction: column-reverse;
+  }
+  .top-nav nav {
+    width: 100%;
+    justify-content: space-between;
+  }
+  .top-nav .logo {
+    padding: 2rem 0;
+  }
 }
 
 .top-nav nav a {
@@ -242,13 +167,18 @@ header.secondary {
 
 h1 {
   font-size: 4.8rem;
-  /* color: red; */
 }
 
 .header-inner {
   display: inline-block;
   flex-grow: 2;
   text-align: center;
+}
+
+@media(max-width: 800px) {
+  header img {
+    display: none;
+  }
 }
 
 header button {
@@ -287,6 +217,11 @@ section div {
 
 section div p {
   line-height: 1.2;
+}
+
+img.middle-img {
+  height: 182px;
+  object-fit: cover;
 }
 
 .top-content {
