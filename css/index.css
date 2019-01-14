@@ -100,7 +100,7 @@ img {
 
 .top-nav-container {
   align-items: center;
-  background: #fffffff6;
+  background: #fffffffa;
   display: flex;
   height: var(--top-nav-height);
   justify-content: center;
@@ -243,6 +243,15 @@ button:hover {
   }
 }
 
+@media(max-width: 800px) {
+  header.secondary img {
+    display: inherit;
+    height: 200px;
+    width: 100%;
+    object-fit: cover;
+  }
+}
+
 header button {
   border: 1px solid var(--main-color);
   font-family: var(--main-font);
@@ -327,6 +336,12 @@ img.middle-img {
   width: calc((100% / 2) - 1rem);
 }
 
+@media (max-width: 500px) {
+  .cards section {
+    width: 100%;
+  }
+}
+
 .cards button {
   border-radius: 6px;
   border: 1px solid var(--gray);
@@ -343,7 +358,24 @@ img.middle-img {
 .facts section {
   flex-direction: column;
   padding-top: 0;
-  width: calc((100% / 2) - 1rem);
+  padding-right: 1rem;
+}
+
+@media (max-width: 500px) {
+  .facts section {
+    padding-right: 0;
+  }
+}
+
+.facts img {
+  max-width: 50%;
+  object-fit: cover;
+}
+
+@media (max-width: 500px) {
+  .facts img {
+    display: none;
+  }
 }
 
 ul {
