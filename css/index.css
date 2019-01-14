@@ -175,6 +175,17 @@ h1 {
   font-size: 4.5rem;
 }
 
+button {
+  background: white;
+  margin-top: 1rem;
+}
+
+button:hover {
+  background: var(--main-color);
+  color: white;
+  transition: 200ms;
+}
+
 .header-inner {
   display: inline-block;
   flex-grow: 2;
@@ -188,12 +199,10 @@ h1 {
 }
 
 header button {
-  background: none;
   border: 1px solid var(--main-color);
   font-family: var(--main-font);
   font-size: 1.2rem;
-  width: 11rem;
-  margin-top: 1rem;
+  padding: 0 2.5rem;
 }
 
 .summary {
@@ -261,17 +270,9 @@ img.middle-img {
 }
 
 .cards button {
-  background: white;
   border-radius: 6px;
   border: 1px solid var(--gray);
-  margin-top: 1rem;
   padding: 0.5rem 2rem;
-}
-
-.cards button:hover {
-  background: var(--main-color);
-  color: white;
-  transition: 200ms;
 }
 
 .facts {
