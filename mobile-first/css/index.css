@@ -52,24 +52,26 @@ html, body {
   --main-color: black;
   --main-font: 'Titillium Web', sans-serif;
   --main-width: 876px;
-  --top-nav-height: 5rem;
+  --top-nav-height: 0;
   /* Media queries */
   color: var(--main-color);
   font-family: var(--main-font);
   font-size: 16px;
   height: 100%;
+  max-width: 100%;
 }
 
-@media(max-width: 800px) {
+@media(min-width: 500px) {
   html, body {
     --main-width: 95vw;
     --top-nav-height: 12rem;
   }
 }
 
-@media(max-width: 500px) {
+@media(min-width: 800px) {
   html, body {
     --main-width: 100vw;
+    --top-nav-height: 5rem;
   }
 }
 
